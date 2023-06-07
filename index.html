@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Generator</title>
+</head>
+<body>
+    <h1>Password Generator</h1>
+    <form method="POST" action="/">
+        <label for="length">Password Length:</label>
+        <input type="number" id="length" name="length" min="1" max="100" required>
+        <br>
+        <input type="checkbox" id="uppercase" name="uppercase">
+        <label for="uppercase">Include Uppercase Letters</label>
+        <br>
+        <input type="checkbox" id="lowercase" name="lowercase">
+        <label for="lowercase">Include Lowercase Letters</label>
+        <br>
+        <input type="checkbox" id="numbers" name="numbers">
+        <label for="numbers">Include Numbers</label>
+        <br>
+        <input type="checkbox" id="special_chars" name="special_chars">
+        <label for="special_chars">Include Special Characters</label>
+        <br>
+        <input type="submit" value="Generate Password">
+    </form>
+    <br>
+    {% if password %}
+        <p>Your generated password is: {{ password }}</p>
+    {% endif %}
+</body>
+</html>
